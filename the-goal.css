@@ -1,0 +1,371 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Fredoka", sans-serif;
+}
+
+
+/* NAVBAR STYLING */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2000;
+  height: 100px;
+}
+
+
+
+/* BRAND LOGO */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: rgb(0, 60, 255);
+}
+
+.navbar-brand img {
+  width: 240px;
+  height: 40px;
+  margin-right: 12px;
+  
+}
+
+
+/* NAV LINKS */
+.navbar-nav .nav-link {
+  color: #333;
+  font-weight: 600;
+  padding: 10px 15px;
+  transition: color 0.3s ease;
+  font-size: 1rem;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+  color: rgb(0, 60, 255);
+}
+
+/* DROPDOWN MENU */
+.dropdown-menu {
+  border-radius: 8px;
+  padding: 8px 0;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  border: none;
+  animation: fadeDown 0.3s ease-in-out;
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdown-item {
+  padding: 10px 20px;
+  font-weight: 500;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.dropdown-item:hover {
+  background-color: #f8f8f8;
+  color: rgb(0, 60, 255);
+}
+
+/* LIVE TV BUTTON */
+.btn-primary {
+  background-color: rgb(0, 60, 255);
+  border-color: rgb(0, 60, 255);
+  color: #fff;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: rgb(0, 60, 255);
+  border-color: rgb(0, 60, 255);
+}
+
+/* NAVBAR TOGGLER (MOBILE ICON) */
+.navbar-toggler {
+  border: none;
+  outline: none;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%234B0082' viewBox='0 0 30 30'%3E%3Cpath d='M4 7h22M4 15h22M4 23h22' stroke='%234B0082' stroke-width='2'/%3E%3C/svg%3E");
+}
+
+/* MOBILE RESPONSIVE SPACING */
+@media (max-width: 991.98px) {
+  .navbar-nav .nav-link {
+    padding: 12px 10px;
+  }
+
+  .btn-primary {
+    margin-top: 10px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .dropdown-menu {
+    box-shadow: none;
+  }
+}
+
+/* Show dropdown on hover for large screens */
+@media (min-width: 992px) {
+  .navbar .dropdown:hover .dropdown-menu {
+    display: block;
+    animation: fadeDown 0.3s ease-in-out;
+    margin-top: 0.5rem;
+  }
+
+  /* Optional: Add arrow rotation effect */
+  .navbar .dropdown-toggle::after {
+    transition: transform 0.2s ease;
+  }
+
+  .navbar .dropdown:hover .dropdown-toggle::after {
+    transform: rotate(180deg);
+  }
+}
+
+/* Hide default Bootstrap dropdown arrow */
+.dropdown-toggle::after {
+  display: none !important;
+}
+
+
+/* Hero Section */
+.leadership-hero {
+    background-image: url('./2.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 450px;
+    position: relative;
+}
+
+.overlay {
+    background: rgba(0, 60, 255, 0.6);
+    /* Purple overlay */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    position: relative;
+    padding-top: 40px;
+}
+
+.content {
+    z-index: 2;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+    gap: 12px;
+    padding-left: 20px;
+    padding-right: 20px;
+    max-width: 100%;
+    text-align: center;
+
+}
+
+.breadcrumb {
+    font-size: 16px;
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+
+.breadcrumb .separator {
+    margin: 0 8px;
+    opacity: 0.7;
+}
+
+h1 {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+
+.icon-circle {
+    width: 140px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: -35px;
+    z-index: 3;
+}
+
+.icon-circle img {
+    width: 150px;
+    height: 180px;
+    object-fit: contain;
+    /* filter: drop-shadow(0 0 2px white); */
+    filter:
+        drop-shadow(0 0 0 white)
+        /* base edge */
+        drop-shadow(0 0 1px white) drop-shadow(0 0 2px white) drop-shadow(0 0 3px white) drop-shadow(0 0 4px white);
+}
+
+@media (max-width: 768px) {
+  .leadership-hero {
+    height: 300px;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+
+  .breadcrumb {
+    font-size: 14px;
+  }
+
+  .icon-circle {
+    width: 65px;
+    height: 65px;
+    bottom: -32px;
+  }
+
+  .icon-circle img {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+  .leadership-hero {
+    height: 260px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  .breadcrumb {
+    font-size: 13px;
+  }
+
+  .icon-circle {
+    width: 60px;
+    height: 60px;
+    bottom: -30px;
+  }
+
+  .icon-circle img {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+
+.content-section {
+  max-width: 800px;
+  margin: 100px auto 40px auto; /* space below navbar */
+  padding: 0 20px;
+  text-align: center;
+  padding-top: 60px;
+}
+
+.content-section .date {
+  color: rgb(0, 60, 255);
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.content-section .title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.content-section .underline {
+  width: 60px;
+  height: 4px;
+  background-color: rgb(0, 60, 255);
+  margin: 0 auto 30px auto;
+  border-radius: 2px;
+}
+
+.content-section .content {
+  text-align: left;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #444;
+}
+
+
+.site-footer {
+  background-color: rgb(0, 60, 255);
+  color: #fff;
+  padding: 25px 20px;
+  font-size: 14px;
+}
+
+.footer-inline {
+  max-width: 1000px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  text-align: center;
+}
+
+.footer-logo {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.footer-social a {
+  color: #ccc;
+  font-size: 18px;
+  margin: 0 8px;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+.footer-social a:hover {
+  color: #fff;
+}
+
+.footer-copy {
+  margin: 0;
+  color: #aaa;
+}
+
+/* Responsive: stack icons below text on small screens */
+@media (max-width: 600px) {
+  .footer-inline {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

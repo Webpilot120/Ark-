@@ -1,0 +1,366 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+
+/* Reset basic elements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+    font-family: "Fredoka", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+button,
+span,
+li {
+    font-family: "Fredoka", sans-serif;
+
+}
+
+/* NAVBAR STYLING */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2000;
+}
+
+
+
+/* BRAND LOGO */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: rgba(0, 60, 255, 0.6);
+}
+
+.navbar-brand img {
+  width: 240px;
+  height: 40px;
+  margin-right: 12px;
+}
+
+
+/* NAV LINKS */
+.navbar-nav .nav-link {
+  color: #333;
+  font-weight: 600;
+  padding: 10px 15px;
+  transition: color 0.3s ease;
+  font-size: 1rem;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+  color: rgba(0, 60, 255, 0.6);
+}
+
+/* DROPDOWN MENU */
+.dropdown-menu {
+  border-radius: 8px;
+  padding: 8px 0;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  border: none;
+  animation: fadeDown 0.3s ease-in-out;
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdown-item {
+  padding: 10px 20px;
+  font-weight: 500;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.dropdown-item:hover {
+  background-color: #f8f8f8;
+  color: rgba(0, 60, 255, 0.6);
+}
+
+/* LIVE TV BUTTON */
+.btn-primary {
+  background-color: rgba(0, 60, 255, 0.6);
+  border-color: rgba(0, 60, 255, 0.6);
+  color: #fff;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: rgba(0, 60, 255, 0.6);
+  border-color: rgba(0, 60, 255, 0.6);
+}
+
+/* NAVBAR TOGGLER (MOBILE ICON) */
+.navbar-toggler {
+  border: none;
+  outline: none;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%234B0082' viewBox='0 0 30 30'%3E%3Cpath d='M4 7h22M4 15h22M4 23h22' stroke='%234B0082' stroke-width='2'/%3E%3C/svg%3E");
+}
+
+/* MOBILE RESPONSIVE SPACING */
+@media (max-width: 991.98px) {
+  .navbar-nav .nav-link {
+    padding: 12px 10px;
+  }
+
+  .btn-primary {
+    margin-top: 10px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .dropdown-menu {
+    box-shadow: none;
+  }
+}
+
+/* Show dropdown on hover for large screens */
+@media (min-width: 992px) {
+  .navbar .dropdown:hover .dropdown-menu {
+    display: block;
+    animation: fadeDown 0.3s ease-in-out;
+    margin-top: 0.5rem;
+  }
+
+  /* Optional: Add arrow rotation effect */
+  .navbar .dropdown-toggle::after {
+    transition: transform 0.2s ease;
+  }
+
+  .navbar .dropdown:hover .dropdown-toggle::after {
+    transform: rotate(180deg);
+  }
+}
+
+/* Hide default Bootstrap dropdown arrow */
+.dropdown-toggle::after {
+  display: none !important;
+}
+
+
+
+.coming-soon {
+  position: relative;
+  background: url("./37.jpg") no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+}
+
+.coming-soon .overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 60, 255, 0.6); /* Dark overlay */
+  z-index: 1;
+}
+
+.coming-soon .content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  padding: 20px;
+}
+
+.coming-soon h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.coming-soon p {
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.countdown div {
+  background: rgba(0, 13, 53, 0.6);
+  padding: 15px 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.countdown span {
+  display: block;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.countdown small {
+  font-size: 0.8rem;
+  opacity: 0.9;
+}
+
+/* Subscribe form */
+.subscribe {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.subscribe input {
+  padding: 10px;
+  border: none;
+  border-radius: 25px 0 0 25px;
+  outline: none;
+  width: 70%;
+  max-width: 300px;
+}
+
+.subscribe button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 0 25px 25px 0;
+  background: rgba(0, 60, 255, 0.6);
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.subscribe button:hover {
+  background: rgba(0, 60, 255, 0.6);
+}
+
+
+
+/* 🔥 Simple bouncing balls animation */
+.animation {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+  height: 50px;
+}
+
+.ball {
+  width: 15px;
+  height: 15px;
+  background: #fff;
+  border-radius: 50%;
+  animation: bounce 0.6s infinite alternate;
+}
+
+/* Delay each ball for wave effect */
+.ball:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.ball:nth-child(3) {
+  animation-delay: 0.4s;
+}
+.ball:nth-child(4) {
+  animation-delay: 0.6s;
+}
+.ball:nth-child(5) {
+  animation-delay: 0.8s;
+}
+.ball:nth-child(6) {
+  animation-delay: 1s;
+}
+.ball:nth-child(7) {
+  animation-delay: 1.2s;
+}
+.ball:nth-child(8) {
+  animation-delay: 1.4s;
+}
+
+@keyframes bounce {
+  from {
+    transform: translateY(0);
+    opacity: 0.7;
+  }
+  to {
+    transform: translateY(-25px);
+    opacity: 1;
+  }
+}
+
+
+.site-footer {
+  background-color: rgb(0, 60, 255);
+  color: #fff;
+  padding: 25px 20px;
+  font-size: 14px;
+}
+
+.footer-inline {
+  max-width: 1000px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  text-align: center;
+}
+
+.footer-logo {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.footer-social a {
+  color: #fff;
+  font-size: 18px;
+  margin: 0 8px;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+.footer-social a:hover {
+  color: #fff;
+}
+
+.footer-copy {
+  margin: 0;
+  color: #fff;
+}
+
+/* Responsive: stack icons below text on small screens */
+@media (max-width: 600px) {
+  .footer-inline {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
