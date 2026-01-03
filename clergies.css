@@ -287,7 +287,7 @@ h1 {
 
 .card-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 20px;
   padding: 20px;
@@ -298,7 +298,7 @@ h1 {
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   overflow: hidden;
-  width: 23%;
+ 
   text-align: center;
   font-family: 'Poppins', sans-serif;
 }
@@ -353,6 +353,44 @@ h1 {
   margin-top: 200px; /* 👈 This pushes it down */
   margin-bottom: 70px;
 }
+
+/* ===== CARD RESPONSIVENESS ===== */
+
+/* Desktop (default) */
+.card {
+  width: calc(25% - 24px); /* 4 cards per row */
+}
+
+/* Tablets */
+@media (max-width: 992px) {
+  .card {
+    width: calc(50% - 24px); /* 2 cards per row */
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .card {
+    width: 100%; /* 1 card per row */
+    max-width: 360px; /* keeps it neat */
+  }
+
+  .card-container {
+    margin-top: 120px; /* reduce big gap */
+  }
+}
+
+
+@media (max-width: 576px) {
+  .card-content h3 {
+    font-size: 17px;
+  }
+
+  .card-content p {
+    font-size: 13px;
+  }
+}
+
 
 
 
